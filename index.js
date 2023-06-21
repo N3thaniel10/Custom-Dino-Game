@@ -2,8 +2,6 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
-export default Runner;
-
 (function () {
     'use strict';
     /**
@@ -37,7 +35,7 @@ export default Runner;
         this.distanceMeter = null;
         this.distanceRan = 0;
 
-        this.highestScore = localStorage.getItem('highestScore') || 0;
+        this.highestScore = 0;
 
         this.time = 0;
         this.runningTime = 0;
@@ -802,7 +800,6 @@ export default Runner;
             if (this.distanceRan > this.highestScore) {
                 this.highestScore = Math.ceil(this.distanceRan);
                 this.distanceMeter.setHighScore(this.highestScore);
-                localStorage.setItem('highestScore', this.highestScore);
             }
 
             // Reset the time clock.
