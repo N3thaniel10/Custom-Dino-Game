@@ -893,8 +893,6 @@ if (typeof(Storage) !== "undefined") {
                 this.time = getTimeStamp();
                 this.containerEl.classList.remove(Runner.classes.CRASHED);
                 this.clearCanvas();
-                this.distanceMeter.reset(this.highestScore);
-                this.distanceMeter.setHighScore(window.localStorage.removeItem('chrome-dino'));
                 this.horizon.reset();
                 this.tRex.reset();
                 this.playSound(this.soundFx.BUTTON_PRESS);
