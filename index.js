@@ -506,14 +506,7 @@
          * Update the game status to started.
          */
         startGame: function () {
-            if (typeof(Storage) !== "undefined") {
-                var highScore = localStorage.getItem("highScore");
-                if (highScore !== null) {
-                    this.highestScore = parseInt(highScore);
-                }
-            } else {
-                console.log("Sorry, your browser does not support Web Storage...");
-            }
+
             this.setArcadeMode();
             this.runningTime = 0;
             this.playingIntro = false;
@@ -850,16 +843,6 @@
                 this.distanceMeter.setHighScore(this.highestScore);
                 window.localStorage.setItem('chrome-dino', this.distanceRan);
             }
-
-            // New code
-if (typeof(Storage) !== "undefined") {
-    var highScore = localStorage.getItem("highScore");
-    if (highScore === null || this.highestScore > highScore) {
-        localStorage.setItem("highScore", this.highestScore.toString());
-    }
-} else {
-    console.log("Sorry, your browser does not support Web Storage...");
-}
 
             // Reset the time clock.
             this.time = getTimeStamp();
